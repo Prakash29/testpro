@@ -1,4 +1,4 @@
-package automation;
+
 
 public class SwapNo {
 
@@ -17,12 +17,15 @@ public class SwapNo {
 		a=a-b;
 		System.out.println(a);
 		System.out.println(b);*/
-		
+
+		System.out.println("before  swaping  of a "+a);
+		System.out.println("after swaping  of a "+b);
 		temp=a;
 		a=b;
 		b=temp;
 		
-		System.out.println(b);
+		System.out.println("after swaping  of a "+a);
+		System.out.println("after swaping  of a "+b);
 	}
 
 }
