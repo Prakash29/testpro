@@ -8,10 +8,13 @@ public class RevStr1 {
 	{
 		
 		String str="Prakash";
+		String str1="PMS";
 		
 StringBuilder sb=new StringBuilder(str);
+StringBuffer sb1=new StringBuffer(str1);
 
 System.out.println(sb.reverse().toString());
+System.out.println(sb1.reverse().toString());
 
 
 /*System.out.println("Enter string to reverse:");

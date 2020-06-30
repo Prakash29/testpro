@@ -5,7 +5,7 @@ public class Rev {
 	public static void main(String[] args) 
 	{
 		
-      String s="Prakash";
+      String s="nayan";
       
        String rev="";
        
@@ -13,8 +13,16 @@ public class Rev {
        {
     	   
     	   rev=rev+s.charAt(i);
-    	   
        }
+    	   if(rev.equals(s))
+    	   {
+    		   System.out.println("palindrom");
+    	   }
+    	  
+             else 
+	   {
+		   System.out.println("not palindrom");
+	   }
 System.out.println(rev);
 
 	}

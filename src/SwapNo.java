@@ -19,13 +19,13 @@ public class SwapNo {
 		System.out.println(b);*/
 
 		System.out.println("before  swaping  of a "+a);
-		System.out.println("after swaping  of a "+b);
+		System.out.println("before swaping  of b "+b);
 		temp=a;
 		a=b;
 		b=temp;
 		
 		System.out.println("after swaping  of a "+a);
-		System.out.println("after swaping  of a "+b);
+		System.out.println("after swaping  of b "+b);
 	}
 
 }

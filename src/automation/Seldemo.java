@@ -1,5 +1,5 @@
 package automation;
-import java.util.ArrayList;
+
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
@@ -20,13 +20,14 @@ import net.bytebuddy.implementation.bind.ArgumentTypeResolver;
 
 public class Seldemo {
 	
+	WebDriver driver;
 	
 	public void login(String url)
 	{
 		try
 		{
 			System.setProperty("webdriver.chrome.driver",
-					"C:\\Users\\Prakash-Sonawane\\Downloads\\SetUp\\chromedriver_win32 (1)\\chromedriver.exe");
+					"C:\\Users\\Prakash-Sonawane\\Downloads\\SetUp\\chromedriver_win32\\chromedriver.exe");
 
 					ChromeOptions opt = new ChromeOptions();
 
@@ -44,17 +45,19 @@ public class Seldemo {
 					driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 					driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
-					driver.findElement(By.name("uid")).clear();
-					driver.findElement(By.name("uid")).sendKeys("12345");
-					driver.findElement(By.name("password")).clear();
-					driver.findElement(By.name("password")).sendKeys("aaaa");
-					//driver.findElement(By.xpath("//*[@id=\"submitInput\"]/div[6]/input")).click();
-					driver.findElement(By.xpath("//*[@id=\"submitInput\"]/div[6]/input")).click();
+					driver.findElement(By.xpath("//input[@name=\"email\"]")).clear();
+					driver.findElement(By.xpath("//input[@name=\"email\"]")).sendKeys("prakashsonawane95@gmail.com");
+					
+					driver.findElement(By.xpath("//input[@id=\"pass\"]")).clear();
+					driver.findElement(By.xpath("//input[@id=\"pass\"]")).sendKeys("Prakash@29");
+					
+					driver.findElement(By.xpath("//input[@type=\"submit\"]")).click();
+					
 					String atitle =driver.getTitle();
 					
 					System.out.println(atitle);
 					
-					String etitle ="GMillennia - Login Page";
+					String etitle ="Facebook – log in or sign up";
 					
 					if(atitle.contentEquals(etitle))
 					{
@@ -80,14 +83,17 @@ System.out.println("unable to lounch:"+e.getMessage());
 		}
 
 
-
-	
-	public static void main(String[] args)
+public void logout()
+{
+	driver.findElement(By.xpath("//*[@id=\"jsc_c_79\"]/div/div/span")).click();
+	driver.close();
+}
+ public static void main(String[] args)
 
 	{
 		 Seldemo obj =new Seldemo();
 		
-		 obj.login("https://gmilsqm.uschecomrnd.net/web/index.jsp?timeout=true");
+		 obj.login("https://www.facebook.com/");
 		
         // obj.logincredential("prakashsonawane95@gmail.com", "Prakash@29");
 		
